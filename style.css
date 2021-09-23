@@ -13,7 +13,7 @@ body {
 .cover {
   position: relative;
   height: 180px;
-  background: hsla(193, 50%, 75%, 0.5);
+  background: url(milkeyway.jpg) no-repeat center/cover;
 }
 .prof-img {
   position: relative;
@@ -23,18 +23,20 @@ body {
   margin-left: -89px;
 }
 .prof-name {
-  color: salmon;
+  color: rgb(245, 83, 65);
   font-family: Courier New;
-  font-size: 42px;
+  font-size: 60px;
+  font-weight: bolder;
   margin-bottom: 0px;
   margin-top: 0px;
   padding-top: 50px;
   text-align: center;
 }
 .prof-discription {
-  color: black;
+  color: white;
   font-family: Courier New;
   font-size: 20px;
+  font-weight: lighter;
   text-align: center;
   margin-top: 10px;
 }
