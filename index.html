@@ -8,47 +8,251 @@
   <title>COSE&nu;</title>
 </head>
 <link rel="stylesheet" href="style.css" />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 
 <body>
-  <div class="cover">
-    <h1 class="prof-name">COSE&nu;</h1>
-    <div class="devider"></div>
-    <p class="prof-discription">A SOPHISTICATED ENGINE FOR COLLECTIVE NEUTRINO OSCILLATION SIMULATION</p>
+  <div style="width:100%;padding-left: 15%;padding-right: 15%;">
+    <div class="cover">
+      <h1 class="prof-name">COSE&nu;</h1>
+      <div class="devider"></div>
+      <p class="prof-discription">A SOPHISTICATED ENGINE FOR COLLECTIVE NEUTRINO OSCILLATION SIMULATION</p>
+    </div>
 
-  </div>
-  <div class="lower-triangle">
-    <h1>About</h1>
+    <div class="lower-triangle">
+      <h1>About</h1>
+      <p>
+        <code>COSE&nu;</code> written completely in <code>C++</code> provide two advanced numerical schemes
+        to simulate collective neutrino oscillation in the mean-field limit. The first method uses fourth order
+        accurate central differencing supplimented by third order Kreiss-Oliger error suppression scheme.
+        The second one is implemented in using finite volume method along with the seventh order accurate
+        weighted essentially non-oscillatory scheme for the flux reconstruction across the cell boundaries.
+        In both cases time evolution is carried out via fourth order Runge-kutta method so that the spatial
+        and temopral accuracies are of the same order.
+      </p>
+    </div>
+
+    <div class="center-white">
+      <h1>Brief Overview</h1>
+
+      <h2><u>Theoretical setup</u></h2>
+      <p>
+        <code>COSE&nu;</code> solve the following 1-D hyperbolic equation with source term which describe
+        the evolution of the two flavor neutrino system.
+      <p>
+
+      <div class="eq">
+        $$\begin{equation}\left( \frac{\partial}{\partial t} + v\frac{\partial}{\partial z}\right)\rho_v(z,t) =
+        -i\bigg[H_v(z, t), \rho_v(z, t)\bigg]\end{equation} ~~~~~~ (1) $$
+      </div>
+
+      <p>
+        \(\rho_v(z, t)\) is a complex valued \(2\times2\) matrix carrying the information about the number densities
+        (diagonal entries) of the e-type (\(\nu_e\)) and the x-type (\(\nu_x\)) neutrinos, and the correlations
+        (off-diagonal entries) among them for a given velocity mode \(v\) at position \(z\) and time \(t\). The density
+        matric \(\rho_v\) takes the following form.
+      </p>
+
+      <div class="eq">
+        $$
+        \rho_v(z, t) = \left(\begin{align}
+        &\rho_{ee} ~~ \rho_{ex} \\
+        &\rho_{ex}^* ~~ \rho_{xx}
+        \end{align}
+        \right) ~~~~~~ (2)
+        $$
+      </div>
+
+      <p>
+        The quantity \(H_v(z, t)\) on the right hand side of the equation (1) represents the Hamiltonian which dictates
+        the dynamics of the flavor transitions. In general \(H_v\) contentains contributions from vacuum oscillation
+        \(H^{\text{vac}}\), interaction with matter \(H^{\text{m}}\) and the interactions among themselves
+        \(H^{\nu\nu}\). In the present implementation of <code>COSE&nu;</code>, contribution from matter has been
+        neglected assuming that the matter is homogeniously distributed, which therefore do not affect the neutrino
+        flavor transitions. Thus, \(H_v\) takes the form,
+      </p>
+
+      <div class="eq">
+        $$
+        \begin{align}
+        H_v(z, t) &= H^{\text{vac}} + H^{\nu\nu} \\
+        &= H^{\text{vac}} + \mu\int_{-1}^{1}dv'(1-vv')\left(\rho_{v'}-\bar{\rho_{v'}}^*\right) ~~~~~~ (3)
+        \end{align}
+        $$
+      </div>
+
+      <p>
+        where, \(\bar\rho\) is the density matrix for the anti-neutrino.
+      </p>
+
+      <h2><u>Numerical setup</u></h2>
+
+      <p>
+        In order to solve the equation (1) numerically, we devide the spatial domain spanning from \(z_0\) to \(z_1\)
+        into
+        \(N_z\) discreate points an such that the size of each cell \(dz = (z_1 - z_0)/N_z\). Furthermore we also devide
+        the velocity domain into \(N_{v_z}\) bins such that the integration in the equation (3) and evolution of each
+        velocity
+        mode can be effectively carried out.
+      </p>
+
+      <p>
+        With the above discretization, the initial value problem in the equation (1) can be transformed into the
+        flollowing form.
+      </p>
+
+      <div class="eq">
+        $$
+        \frac{d\rho_{v,i}}{dt} = L^{\text{vac}}_i[\rho_v] + L^{\nu\nu}_i[\rho_v] + L^{adv}_i[\rho_v]
+        $$
+      </div>
+
+      <p>
+        where, \(L_i^\text{vac}, L_i^{\nu\nu}\) and \(L_i^\text{adv}\) are the operators which computes the contribution 
+        from vacuum oscillation, neutrino-neutrino interaction and the spatial derivative respectively at the \(i^\text{th}\)
+        cell, \(0\leq i < N_z\).  Thus given the values of the field variables at \(t = 0 \) of each
+        velocity mode at all grid points, the successive states of the field varibles can be solved using standard 
+        ordinary differential equation solving techniques such as Runge-Kutta method.
+      </p>
+
+      <p>
+        A flowchart depicting the different steps involved in the numerical simulation of collective neutrino oscillation 
+        using <code>COSE&nu;</code> is shown below.
+      </p>
+
+      <img src="COSEnu-flowchart.jpg" style="width:100%;">
+
+    </div>
+
+    <div class="center-white">
+      <h1>Usage</h1>
+      <p>
+        Along with the main simulation engine, <code style="font-family:monospace; font-weight: bolder;">
+        COSE&nu;</code> we provide simple interface written in <code>python</code> to reduce the difficulties of
+        setting up and running the simulation. The enitre process of the simulation can be thought of as consisting
+        of following steps.
+      </p>
+
+      <ul style="font-size: 20px;">
+        <li> Setting up the spatial grid and phase-space bins.</li>
+        <li>Populating the grid points according to the physical problems at hand.</li>
+        <li> Running the simulation.</li>
+        <li>Analysing the results.</li>
+      </ul>
+      <p> In the following we will explain the details of carrying out each of these steps.</p>
+    </div>
+    <div>
+      <h2><u>Setting up the spatial grid</u></h2>
+    </div>
     <p>
-      <code>COSE&nu;</code> provide different numerical simulation methods, the finite difference and the finite volume
-      scheme to simulate fast pairwise collective neutrino
-      conversions. The finite differencing scheme uses fourth order accurate central differencing scheme with third
-      order
-      Kreiss-Oliger dissipation to treat the advection effectively. The finite volume scheme uses seventh order accurate
-      weighted non-oscillatory scheme for the flux reconstruction across the grid boundaries. In both cases time
-      evolution is
-      implemented using fourth order Runge-kutta method so that the spatial and temopral accuracies are of the same
-      order.
+      Open <code>COSEnu/lib/configs.yaml</code> file. The domain spacific part typically
+      look like one in the the screen shot below.
     </p>
-  </div>
-  <div class="center-white">
-    <h1>Some title</h1>
+    <img class="info" src="domain_specifics.png" />
     <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil est
-      voluptate facere perferendis dolores expedita dolorem dolor aspernatur
-      non qui rem et sit maxime sunt, amet, illum exercitationem tenetur
-      repudiandae?
+      <code>zrange</code> : Start and end values for the domain required for the simulation. Both satrt and
+      end values are necessary.
     </p>
-  </div>
-  <div class="upper-triangle">
-   
-  </div>
-  <div class="card">
-    <h2>Let's get in touch</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
-      explicabo fuga iure dignissimos doloribus ipsa perferendis eos ipsam,
-      sed quos?
+      <code>nzs</code> : Values of resolutions for which we want to run the simulations. In principle we
+      can put any number of value inside the square bracket separated by comma. However the bracket should
+      contain atleast one value.
     </p>
+    <p>
+      <code>CFLS</code> : Values of the <code>CFL</code> porameter for which we want to run the simulation.
+      Any nmber of values with in the square brackets are allowed. The Bracket cannot be empty. For numerical
+      stability each of these values should be less than or equal to 1.
+    </p>
+    <div>
+      <h2><u>Setting up the velocity bins</u></h2>
+    </div>
+    <p>
+      In the current implementation we only consder the z-componant of velocity <math class="math">cos(&theta;)</math>
+      which can take values from -1 to 1. To evole each velocity modes numerically, we treat the beam of neutrinos
+      whose velocity lies between <math class="math">v</math> and <math class="math">v+dv</math> as asingle beam with
+      velocity
+      <math class="math">v+dv/2</math>. The value of <math class="math">dv</math> is then determined via the parameter
+      <math class="math">N</math><sub>v<sub>z</sub></sub>. Screensot for the example of settingtThe starting
+      and ending values of the velocity and, the resolution of the phsase-space is given below.
+    </p>
+    <img class="info" src="phase_space_specific.png">
+    <p>
+      <code>v0</code> : Starting value of the velocity range.
+    </p>
+    <p>
+      <code>v1</code> : Ending value of the velocity range.
+    </p>
+    <p>
+      <code>nvzs</code> : Number of angular bins we require for the simulation.
+    </p>
+    <div>
+      <h2><u>Specifying the output folders</u></h2>
+    </div>
+    <p>
+      We need to store the outputs from the simulations inside some folder. The name of the folder can be specified as
+      follows.
+    </p>
+    <img class="info" , src="output_folders.png">
+    <p>
+      <code>folder_fv</code> : Create folder with specifid name to store the results from simulation with finite volume
+      (FV) scheme.
+    </p>
+    <p>
+      <code>folder_fd</code> : Create folder with specifid name to store the results from simulation with finite
+      difference (FD) scheme.
+    </p>
+    <div>
+      <h2><u>Let's go through an example</u></h2>
+    </div>
+    <p>
+      Once we set up the domain-specific and phasespace-specific parameters, we can go ahead and run the code. Although
+      the
+      initialization of the grid points with appropriate values are necessary. We will discuss this part little
+      bit later. Let us first run the code with our setup assumig some one has already specified the initialization
+      on our behalf. Then running the command
+    </p>
+    <code>python manage.py --in fv</code>
+    <p>
+      from the <code>COSEnu</code> folder will create sub folders with inside the <code>folder_fv</code> with names same
+      as
+      ID = <code>Nz_Nvz_CFL</code>. That is for
+      the set of parameter <code>nzs : [1000]</code>, <code>nvzs : [50]</code> and <code>CFLS : [0.2, 0.4]</code>, the
+      script
+      <code>manage.py</code> will create subfolders with names <code>1000_50_0.2</code> and <code>1000_50_0.4</code>
+      inside
+      <code> folder_fv</code>. The tree view of the <code>folder_fv</code> will look something like in the figure below.
+    </p>
+    <img class="info" src="tree_fv.png">
+    <p>
+      Similarely, to initialize the simulation with finite difference, we can run the following command from the
+      terminal.
+    </p>
+    <code>python manage.py --in fd</code>
+    <p>
+      Now we can use
+    </p>
+    <code>python manage.py --ls fv</code>
+    <p> will run the jobs sequentially with FV scheme and</p>
+    <code>python manage.py --ls fd</code>
+    <p>
+      will run the jobs sequentially with FD scheme. Now that we have run the code successfully, let us move on to the
+      part where
+      we fill up the computational cells with neutrinos.
+    </p>
+
+    <div>
+      <h2><u>Filling up the grid points</u></h2>
+    </div>
+    <img class="info" src="init.png">
+
+    <div>
+      <div>
+        <h2><u>Let's get in touch</u></h2>
+      </div>
+      <p>
+        Kindly direct the queries <a href="mailto:cosenuproject@gmail.com?">here</a>.
+      </p>
+    </div>
+
   </div>
 </body>
 
