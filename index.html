@@ -120,9 +120,59 @@
       </p>
 
       <img src="COSEnu-flowchart.jpg" style="width:100%;">
+  
 
+      The most time-consuming functions are the following:
+
+      <h3><u>The one using finite difference</u></h3>
+
+   
+      <p>
+        The fourth-order finite difference using in the advection
+      </p>
+      <div class="eq">
+        $$
+        \frac{\partial \rho_{v,i}}{\partial z} = \frac{1}{12 dz}(\rho_{i-2} - 8\rho_{i-1} + 8 \rho_{i+1} - \rho_{i+2})        $$
+      </div>
+ 
+      <p>
+        The Kreiss-Oliger dissipation for error surpressing in finite difference goes like
+      </p>
+      <div class="eq">
+        $$
+        \frac{-\kappa}{64 dz} (\rho_{i-3} + \rho_{i+3} - 6(\rho_{i-2} + \rho_{i+2}) + 15(\rho_{i-1} + \rho_{i+1}) - 20 \rho_i) 
+
+        $$
+      </div>
+      
+   <! -- finite difference version --> 
+      <pre>
+      The pseudocode for the FD part:
+   <code>
+    NuOsc::calRHS(FieldVar *out, const FieldVar *in){
+        for all velocity bins{
+            for all spatial grids{
+                
+                #ifdef VAC_OSC_ON
+                    out = -i [H_vac, in]
+                #ifdef ADV_FD
+                    out = L_adv[in]
+
+                #ifdef COLL_OSC_ON 
+                for all test velocity bins{
+                    do the computation within the integral
+                }
+
+                #ifdef KO_FD
+                do the Kreiss-Oliger dissipation
+            }
+        }
+    }
+    </code>
+
+    </pre>
     </div>
-
+    
     <div class="center-white">
       <h1>Usage</h1>
       <p>
