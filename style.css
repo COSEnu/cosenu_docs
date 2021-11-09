@@ -23,6 +23,15 @@ code{
   font-weight: lighter;
   padding: 2px;
 }
+.code_block{
+  background-color: rgba(240, 234, 234, 0.822);
+  border: 1px solid red;
+  border-radius: 4px;
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: lighter;
+  padding: 2px;
+}
 .cover {
   position: center;
   height: 180px;
@@ -245,9 +254,9 @@ img.info {
   background-color: rgba(240, 234, 234, 0.822);  
   border-radius: 4px;
   /*font-size: 18px;
-  font-family: monospace;
+  font-family: monospace;*/
   font-weight: lighter;
-  font-style: oblique; */
+  /* font-style: oblique;  */
 }
 u {
   text-decoration: 2px red underline;
@@ -267,7 +276,11 @@ img.code {
 }
 .eq{
   width:100%;
-  /* background-color: white; */
   background-color: rgba(240, 234, 234, 0.822);
   padding:1px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.sub_h{
+  font-style: oblique;
 }
