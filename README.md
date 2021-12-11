@@ -1,1 +1,1 @@
-Visit here : https://demon-of-asgard.github.io/mypage/
+For documentation visit here : https://cosenu.github.io/cosenu_docs/
