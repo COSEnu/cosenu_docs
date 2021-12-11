@@ -1,0 +1,16 @@
+theme: jekyll-theme-leap-day
+
+title: COSE&nu;
+description: Documentation
+lsi: false
+safe: true
+
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+
+markdown: kramdown
+highlighter: rouge
+input: GFM
+math_engine: mathjax
