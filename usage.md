@@ -154,4 +154,4 @@ zsnap_v: [-1, -0.5, 0.5, 1] # v-modes for full spatial domain snapshots.
 #----------------------------------------------------------------#
 ```
 
-[<previous](comp_setup.md) [next>]()
+[<previous](comp_setup.md)  [home](index.md)  [next>]()
