@@ -8,13 +8,13 @@
 4. [Usage](usage.md)
 
 # About
-<p align="justify">
+
 Collective Oscillation Simulation Engine for Neutrino-$$\text{COSE}\nu$$ is written completely in `C++` provide two advanced numerical schemes
 to simulate collective neutrino oscillation in the mean-field limit. The first method uses fourth order accurate central differencing supplimented by third 
 order Kreiss-Oliger error suppression scheme. The second one is implemented in using finite volume method along with the seventh order accurate weighted 
 essentially non-oscillatory scheme for the flux reconstruction across the cell boundaries. In both cases time evolution is carried out via fourth order 
 Runge-kutta method so that the spatial and temopral accuracies are of the same order.
-</p>
+
 # Theoretical setup
 
 $$\text{COSE}\nu$$ solves the following 1-D hyperbolic equation with source term which describe the evolution of the two flavor neutrino system.
