@@ -126,7 +126,7 @@ By default vacuum oscillation is turned off.
 `collective_osc_on` : Also accepts Boolean values. `True` for turning neutino collective oscillation on and `False` for turning it off.
 By default, collective oscillation is turned on.
 
-`mu` : Indicates the streangth of $$\nu-\nu$$ interaction ($$\mu=\sqrt(2)G_Fn_{\nu_e}$$). By default, $$\mu$$ is set to 1.
+`mu` : Indicates the streangth of $$\nu-\nu$$ interaction ($$\mu=\sqrt{2}G_Fn_{\nu_e}$$). By default, $$\mu$$ is set to 1.
 
 ## Analysis
 
