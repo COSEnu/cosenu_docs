@@ -1,4 +1,5 @@
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 # Numerical setup
 
 In order to solve the equation (1) numerically, we devide the spatial domain spanning from $$z_0$$ to $$z_1$$ into
