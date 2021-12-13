@@ -84,24 +84,56 @@ end_time: 100
 ```
 
 `end_time` : End time for the simulation in physical units. Given the physical end time the number of iterations 
-are estimated using $$\text{N_ITER} = $$ `end_time`$$/dt$$, where $$ dt = CFL\times dz$$.
+are estimated using $$\text{N_ITER} = $$ end_time$$/dt$$, where $$ dt = \text{CFL}\times dz$$.
+
+## Switching the advection
+
+One can also switch on and off the advection throught the configuration file.
+
 
 ```yml
 #----------------------------------------------------------------#
 
 # Switch on/off advection.
 advection_off: False # Options -> True, False
+```
 
+`advection_off`: Accepts Boolean values. Setting `advection_off` to `False` ensure the advection is switched on while setting it to 
+`True` will solve for the ordinary differential equation (ODE) in time (Eq. (1) without advection).
+
+## Specifying the oscillation parameters
+
+To set up goth vacuum and collective neutino oscillation related parameters, we can use the configuration file as follows.
+
+```yml
 # Switch on/off vacuum oscillation
 vac_osc_on: False # options -> True, False
 pmo: 1.0 # 1.0 -> normal mass ordering, -1.0 -> inverted mass ordering, 0.0 -> no vacuum term.
-omega: 1.0 # \Dedlta m^2/2E.
+omega: 1.0e-4 # \Dedlta m^2/2E.
 theta: 37 # Vacuum mixing angle in degrees.
 
 # Switch on/off collective oscillations
 collective_osc_on: True # Options -> True, False
 mu: 1.0 # \sqrt{2} G_F n_{\nu_e}
 
+```
+
+`vac_osc_on`: Accepts Boolean values. `True` for switching on the vacuum oscillation and `False` for switching off.
+By default vacuum oscillation is turned off.
+
+`pmo`: To specify the neutrino mass ordering. Set it to 1 for normal mass ordering and -1 for inverted mass ordering.
+
+`omega` : Vacuum oscillation frequency.
+
+`theta` : Vacuum mixinf angle.
+
+`collective_osc_on` : Also accepts Boolean values. `True` for turning neutino collective oscillation on and `False` for turning it off.
+By default, collective oscillation is turned on.
+
+`mu` : Indicates the streangth of $$\nu-\nu$$ interaction($$\mu=\sqrt(2)G_Fn_{\nu_e}$$). By default, $$\mu$$ is set to 1.
+
+
+```yml
 # ANALYSIS
 #----------------------------------------------------------------#
 
