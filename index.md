@@ -1,12 +1,10 @@
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-#Contents
+
+# Contents
 
 1. [About](index.md)
-
 2. [Theoretical setup](index.md)
-
 3. [Numerical setup](comp_setup.md)
-
 4. [Usage](usage.md)
 
 # About
