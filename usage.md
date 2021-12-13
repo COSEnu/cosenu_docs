@@ -7,7 +7,7 @@ Along with the main simulation engine, $$\text{COSE}\nu$$ we provide simple inte
 process of the simulation can be thought of as consisting of following steps.
 
 - Setting up the spatial grid and phase-space bins.
-- Populating the grid points according to the physical problems at hand.
+- Initializing the grid points.
 - Running the simulation.
 - Analysing the results.
 
@@ -76,8 +76,6 @@ folder_fd: "outputs-from-fd"
 
 The number of iterations for which the simulation should be carried out can be specified as follows.
 ```yml
-#----------------------------------------------------------------#
-
 # Number of iterations = int(end_time/dt)
 # dt = CFL*dz
 end_time: 100
@@ -92,8 +90,6 @@ One can also switch on and off the advection throught the configuration file.
 
 
 ```yml
-#----------------------------------------------------------------#
-
 # Switch on/off advection.
 advection_off: False # Options -> True, False
 ```
@@ -125,13 +121,14 @@ By default vacuum oscillation is turned off.
 
 `omega` : Vacuum oscillation frequency.
 
-`theta` : Vacuum mixinf angle.
+`theta` : Vacuum mixing angle.
 
 `collective_osc_on` : Also accepts Boolean values. `True` for turning neutino collective oscillation on and `False` for turning it off.
 By default, collective oscillation is turned on.
 
-`mu` : Indicates the streangth of $$\nu-\nu$$ interaction($$\mu=\sqrt(2)G_Fn_{\nu_e}$$). By default, $$\mu$$ is set to 1.
+`mu` : Indicates the streangth of $$\nu-\nu$$ interaction ($$\mu=\sqrt(2)G_Fn_{\nu_e}$$). By default, $$\mu$$ is set to 1.
 
+## Analysis
 
 ```yml
 # ANALYSIS
@@ -148,9 +145,8 @@ n_vsnap: 5 # snapshot of phase-space at vsnap_zlocs
 vsnap_z: [-300, 0, 300] # z-locations for phsse-space snapshots.
 
 # To capture the evolution of the field variables for given modes over the entire domain.
-n_zsnap:
-  5 # snapshot of entire domain for the v_modes at zsnap_vmodes
-  # between time = 0 and time = end_time
+n_zsnap:  5 # snapshot of entire domain for the v_modes at zsnap_vmodes
+            # between time = 0 and time = end_time
 zsnap_v: [-1, -0.5, 0.5, 1] # v-modes for full spatial domain snapshots.
 
 #----------------------------------------------------------------#
