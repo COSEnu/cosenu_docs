@@ -102,4 +102,4 @@ NuOsc::calRHS(FieldVar *out, const FieldVar *in){
 
 ```
 
-[<previous](index.md)  [home](index.md)  [next>](usage.md)
+[<previous](index.md) &#124; [home](index.md) &#124; [next>](usage.md)

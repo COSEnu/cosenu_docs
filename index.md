@@ -51,7 +51,7 @@ $$
 where, $$\bar\rho$$ is the density matrix for the anti-neutrino.
 
 
-[<previous]()  [home](index.md)  [next>](comp_setup.md)
+[<previous]() &#124; [home](index.md) &#124; [next>](comp_setup.md)
 
 
 
