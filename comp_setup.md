@@ -83,8 +83,8 @@ NuOsc::calRHS(FieldVar *out, const FieldVar *in){
     for all velocity bins{
         for all spatial grids{
             out = 0
-        #ifdef ADV_FD
-            out += net_flux[in] // calculated using WENO7
+        #ifdef ADV_FV
+            out += net_flux(in) // calculated using WENO7
         #endif
 
         #ifdef VAC_OSC_ON

@@ -58,8 +58,7 @@ nvzs: [50]
 
 ## Specifying the output folders
 
-We need to store the outputs from the simulations inside some folder. The name of the folder can be
-specified as follows.
+The name of the folders to store the outputs from the simulation can be specified as follows.
 
 ```yml
 # Folder names
@@ -73,15 +72,21 @@ folder_fd: "outputs-from-fd"
 `folder_fd` : Create folder with specifid name to store the results from simulation with finite
               difference (FD) scheme.
 
+## Number of iterations
 
+The number of iterations for which the simulation should be carried out can be specified as follows.
 ```yml
----
 #----------------------------------------------------------------#
 
 # Number of iterations = int(end_time/dt)
 # dt = CFL*dz
 end_time: 100
+```
 
+`end_time` : End time for the simulation in physical units. Given the physical end time the number of iterations 
+are estimated using $$\text{N_ITER} = end_time/dt$$, where $$ dt = CFL\times dz$$.
+
+```yml
 #----------------------------------------------------------------#
 
 # Switch on/off advection.
