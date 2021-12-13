@@ -84,7 +84,7 @@ end_time: 100
 ```
 
 `end_time` : End time for the simulation in physical units. Given the physical end time the number of iterations 
-are estimated using $$\text{N_ITER} = end_time/dt$$, where $$ dt = CFL\times dz$$.
+are estimated using $$\text{N_ITER} = end\_time/dt$$, where $$ dt = CFL\times dz$$.
 
 ```yml
 #----------------------------------------------------------------#
