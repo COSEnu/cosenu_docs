@@ -72,6 +72,8 @@ folder_fd: "outputs-from-fd"
 `folder_fd` : Create folder with specifid name to store the results from simulation with finite
               difference (FD) scheme.
 
+Inside each of these folders, sub-folders will be created to store the output files from each configuration. Each of these sub-folders will be named with their `ID`. By default, the `ID` takes the form `Nz_Nvz_CFL`.
+
 ## Number of iterations
 
 The number of iterations for which the simulation should be carried out can be specified as follows.
@@ -128,23 +130,6 @@ By default, collective oscillation is turned on.
 
 `mu` : Indicates the streangth of $$\nu-\nu$$ interaction ($$\mu=\sqrt{2}G_Fn_{\nu_e}$$). By default, $$\mu$$ is set to 1.
 
-## Output  folders
-
-Name of the output folders can be specified as follows.
-
-```yml
-# Folder names
-folder_fv : "outputs-from-fv"
-folder_fd : "outputs-from-fd"
-```
-
-`folder_fv`: Stores all the outputs from all the simulations with finite 
-volume scheme.
-
-`folder_fd`: Stores all the outputs from all the simulations with finite 
-difference scheme.
-
-Inside each of these folders, sub-folders will be created to store the output files from each configuration. Each of these sub-folders will be named with their `ID`. By default, the `ID` takes the form `Nz_Nvz_CFL`.
 
 ## Analysis
 
@@ -155,7 +140,7 @@ are the details default output files and their output layout.
 - ID_conserved_quantities.dat
     - Stores the details of the violation of conserved quantities.
     - Output layout
-        - Time  $$\delta P_\text{max}$$  $$<\delta P>$$  $$<\delta\bar P$$  $$|M_0|$$        
+        - Time  $$\delta P_\text{max}$$  $$<\delta P>$$  $$<\delta\bar{P}$$  $$|M_0|$$        
 
 ```yml
 # ANALYSIS
