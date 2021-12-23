@@ -137,10 +137,9 @@ Along with the simulation, a few subroutines to check the deviation
 of conserved quantities and take snapshots are included. Following 
 are the details default output files and their output layout.
 
-- ID_conserved_quantities.dat
-    - Stores the details of the violation of conserved quantities.
+- `ID_conserved_quantities.dat`: Stores the details of the violation of conserved quantities.
     - Output layout
-        - Time  ~$$\delta P_\text{max}$$  ~$$\langle\delta P\rangle$$  ~$$\langle\delta\bar{P}\rangle$$  ~$$|M_0|$$        
+        - Time  $$\delta P_\text{max} ~~~~ \langle\delta P\rangle ~~~~ \langle\delta\bar{P}\rangle ~~~~ |M_0|$$        
 
 ```yml
 # ANALYSIS
