@@ -138,11 +138,7 @@ of conserved quantities and take snapshots are included. Following
 are the details default output files and their output layout.
 
 - `ID_conserved_quantities.dat`: Stores the details of the violation of conserved quantities.
-    - Output layout
-
-    $$
-    \text{Time}  \delta P_\text{max} ~~~~ \langle\delta P\rangle ~~~~ \langle\delta\bar{P}\rangle ~~~~ |M_0|
-    $$        
+    - Output layout $$ \text{Time} ~~~~ \delta P_\text{max} ~~~~ \langle\delta P\rangle ~~~~ \langle\delta\bar{P}\rangle ~~~~ |M_0| $$        
 
 
 ```yml
