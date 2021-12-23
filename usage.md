@@ -130,7 +130,8 @@ By default, collective oscillation is turned on.
 
 ## Analysis
 
-
+Along with the simulation, a few subroutines to check the deviation 
+of conserved quantities and take snapshots are included.
 
 ```yml
 # ANALYSIS
