@@ -139,7 +139,11 @@ are the details default output files and their output layout.
 
 - `ID_conserved_quantities.dat`: Stores the details of the violation of conserved quantities.
     - Output layout
-        - Time  $$\delta P_\text{max} ~~~~ \langle\delta P\rangle ~~~~ \langle\delta\bar{P}\rangle ~~~~ |M_0|$$        
+
+    $$
+    \text{Time}  \delta P_\text{max} ~~~~ \langle\delta P\rangle ~~~~ \langle\delta\bar{P}\rangle ~~~~ |M_0|
+    $$        
+
 
 ```yml
 # ANALYSIS
