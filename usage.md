@@ -137,46 +137,46 @@ Along with the simulation, a few subroutines to check the deviation
 of conserved quantities and take snapshots are included. Following 
 are the details default output files and their output layout.
 
-- `ID_conserved_quantities.dat`: Stores the details of the deviations of the conserved quantities.
-    - Output layout: 
+- **`ID_conserved_quantities.dat` :** Stores the details of the deviations of the conserved quantities.
+    - _Output layout_ : 
 
     $$
-    \text{Time} ~~~~ \delta P_\text{max} ~~~~ \langle\delta P\rangle ~~~~ \langle\delta\bar{P}\rangle ~~~~ |M_0| 
+    \text{Time} ~~|~~ \delta P_\text{max} ~~|~~ \langle\delta P\rangle ~~|~~ \langle\delta\bar{P}\rangle ~~|~~ |M_0| 
     $$        
 
-- `ID_survival_probability.dat: Stores the survival probabilities of $$\nu$$ and $$\bar\nu$$
-    - Output layout: 
+- **`ID_survival_probability.dat` :** Stores the survival probabilities of $$\nu$$ and $$\bar\nu$$
+    - _Output layout_ : 
 
     $$
-    Time ~~~~ P_{\nu_e->\nu_e} ~~~~ P_{\bar\nu_e->\bar\nu_e}
+    \text{Time| ~~|~~ P_{\nu_e->\nu_e} ~~|~~ P_{\bar\nu_e->\bar\nu_e}
     $$
 
-- `ID_zsnap_t_<t>_v_<velocity mode>_.dat: Stores the snapshot data of the field variables for velocity mode =`vmode` at time = `t`.
-    - Output layout: 
+- **`ID_zsnap_t_<t>_v_<velocity mode>_.dat` :** Stores the snapshot data of the field variables for velocity mode = `vmode` at time = `t`.
+    - _Output layout_ : 
 
     $$
-    z ~~~~ \rho_{ee} ~~~~ \rho_{xx} ~~~~ \text{Re}[\rho_\text{ex}] ~~~~ \text{Im}[\rho_\text{ex}] ~~~~ \bar\rho_{ee} ~~~~ \bar\rho_{xx} ~~~~ \text{Re}[\bar\rho_\text{ex}] ~~~~ \text{Im}[\bar\rho_\text{ex}]
+    z ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
     $$
 
-- `ID_vsnap_t_<t>_z_<loc>_.dat`: Stores the snapshot data of the field variables for the location =`loc` at time = `t`.
-    - Output layot:
+- **`ID_vsnap_t_<t>_z_<loc>_.dat` :** Stores the snapshot data of the field variables for the location =`loc` at time = `t`.
+    - _Output layot_ :
 
     $$
-    v ~~~~ \rho_{ee} ~~~~ \rho_{xx} ~~~~ \text{Re}[\rho_\text{ex}] ~~~~ \text{Im}[\rho_\text{ex}] ~~~~ \bar\rho_{ee} ~~~~ \bar\rho_{xx} ~~~~ \text{Re}[\bar\rho_\text{ex}] ~~~~ \text{Im}[\bar\rho_\text{ex}]
+    \mathrm{v} ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
     $$
 
-- `ID_state_snap.dat`: Stores full snap shot data of the field variables.
-    - Output layout:
+- **`ID_state_snap.dat` :** Stores full snap shot data of the field variables.
+    - _Output layout_ :
 
     $$
-    v ~~~~ z ~~~~ \rho_{ee} ~~~~ \rho_{xx} ~~~~ \text{Re}[\rho_\text{ex}] ~~~~ \text{Im}[\rho_\text{ex}] ~~~~ \bar\rho_{ee} ~~~~ \bar\rho_{xx} ~~~~ \text{Re}[\bar\rho_\text{ex}] ~~~~ \text{Im}[\bar\rho_\text{ex}]
+    v ~~|~~ z ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
     $$
 
-- `ID_dom_avrgd_surv_prob_<t>_.dat`: Stores the domain averaged survival probabilitis of $$\nu_e$$ and $$\bar\nu_e$$ for all the velocity modes at time = `t`.
-    - Output layout:
-    
+- **`ID_dom_avrgd_surv_prob_<t>_.dat` :** Stores the domain averaged survival probabilitis of $$\nu_e$$ and $$\bar\nu_e$$ for all the velocity modes at time = `t`.
+    - _Output layout_ :
+
     $$
-    v ~~~~  \langle P_{\nu_e->\nu_e}\rangle ~~~~ \langle P_{\bar\nu_e->\bar\nu_e}\rangle
+    \mathrm{v} ~~|~~  \langle P_{\nu_e->\nu_e}\rangle ~~|~~ \langle P_{\bar\nu_e->\bar\nu_e}\rangle
     $$
 
 
