@@ -137,11 +137,40 @@ Along with the simulation, a few subroutines to check the deviation
 of conserved quantities and take snapshots are included. Following 
 are the details default output files and their output layout.
 
-- `ID_conserved_quantities.dat`: Stores the details of the violation of conserved quantities.
-    - Output layout 
+- `ID_conserved_quantities.dat`: Stores the details of the deviations of the conserved quantities.
+    - Output layout: 
     $$
     \text{Time} ~~~~ \delta P_\text{max} ~~~~ \langle\delta P\rangle ~~~~ \langle\delta\bar{P}\rangle ~~~~ |M_0| 
     $$        
+
+- `ID_survival_probability.dat: Stores the survival probabilities of $$\nu$$ and $$\bar\nu$$
+    - Output layout: 
+    $$
+    Time ~~~~ P_{\nu_e->\nu_e} ~~~~ P_{\bar\nu_e->\bar\nu_e}
+    $$
+
+- `ID_zsnap_t_<t>_v_<velocity mode>_.dat: Stores the snapshot data of the field variables for velocity mode =`vmode` at time =`t`.
+    - Output layout: 
+    $$
+    z ~~~~ \rho_{ee} ~~~~ \rho_{xx} ~~~~ \text{Re}[\rho_\text{ex}] ~~~~ \text{Im}[\rho_\text{ex}] ~~~~ \bar\rho_{ee} ~~~~ \bar\rho_{xx} ~~~~ \text{Re}[\bar\rho_\text{ex}] ~~~~ \text{Im}[\bar\rho_\text{ex}]
+    $$
+
+- `ID_vsnap_t_<t>_z_<loc>_.dat`: Stores the snapshot data of the field variables for the location =`loc` at time = `t`.
+    - Output layot:
+    $$
+    v ~~~~ \rho_{ee} ~~~~ \rho_{xx} ~~~~ \text{Re}[\rho_\text{ex}] ~~~~ \text{Im}[\rho_\text{ex}] ~~~~ \bar\rho_{ee} ~~~~ \bar\rho_{xx} ~~~~ \text{Re}[\bar\rho_\text{ex}] ~~~~ \text{Im}[\bar\rho_\text{ex}]
+    $$
+
+- `ID_state_snap.dat`: Stores full snap shot data of the field variables.
+    - Output layout:
+    $$
+    v ~~~~ z ~~~~ \rho_{ee} ~~~~ \rho_{xx} ~~~~ \text{Re}[\rho_\text{ex}] ~~~~ \text{Im}[\rho_\text{ex}] ~~~~ \bar\rho_{ee} ~~~~ \bar\rho_{xx} ~~~~ \text{Re}[\bar\rho_\text{ex}] ~~~~ \text{Im}[\bar\rho_\text{ex}]
+    $$
+- ID_dom_avrgd_surv_prob_<t>_.dat: Stores the domain averaged survival probabilitis of $$\nu_e$$ and $$\bar\nu_e$$ for all the velocity modes at time = `t`.
+    - Output layout:
+    $$
+    v ~~~~  \langle P_{\nu_e->\nu_e} ~~~~ \langle P_{\bar\nu_e->\bar\nu_e}
+    $$
 
 
 ```yml
