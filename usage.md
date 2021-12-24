@@ -72,7 +72,8 @@ folder_fd: "outputs-from-fd"
 `folder_fd` : Create folder with specifid name to store the results from simulation with finite
               difference (FD) scheme.
 
-Inside each of these folders, sub-folders will be created to store the output files from each configuration. Each of these sub-folders will be named with their `ID`. By default, the `ID` takes the form `Nz_Nvz_CFL`.
+Inside each of these folders, sub-folders will be created to store the output files from each configuration. 
+Each of these sub-folders will be named with their `ID`. By default, the `ID` takes the form `Nz_Nvz_CFL`.
 
 ## Number of iterations
 
@@ -133,8 +134,7 @@ By default, collective oscillation is turned on.
 
 ## Analysis
 
-Along with the simulation, a few subroutines to check the deviation 
-of conserved quantities and take snapshots are included. Following 
+Along with the simulation, a few subroutines to check the deviation of conserved quantities and take snapshots are included. Following 
 are the details default output files and their output layout.
 
 - **`ID_conserved_quantities.dat` :** Stores the details of the deviations of the conserved quantities.
@@ -151,7 +151,7 @@ are the details default output files and their output layout.
     \text{Time} ~~|~~ P_{\nu_e->\nu_e} ~~|~~ P_{\bar\nu_e->\bar\nu_e}
     $$
 
-- **`ID_zsnap_t_<t>_v_<velocity mode>_.dat` :** Stores the snapshot data of the field variables for velocity mode = `vmode` at time = `t`.
+- **`ID_zsnap_t_<t>_v_<vmode>_.dat` :** Stores the snapshot data of the field variables for velocity mode = `vmode` at time = `t`.
     - _Output layout_ : 
 
     $$
@@ -198,10 +198,6 @@ vsnap_z: [-300, 0, 300] # z-locations for phsse-space snapshots.
 n_zsnap:  5 # snapshot of entire domain for the v_modes at zsnap_vmodes
             # between time = 0 and time = end_time
 zsnap_v: [-1, -0.5, 0.5, 1] # v-modes for full spatial domain snapshots.
-
-#----------------------------------------------------------------#
-
-#----------------------------------------------------------------#
 ```
 
 [<previous](comp_setup.md)  &#124;  [home](index.md)  &#124;  [next>]() 

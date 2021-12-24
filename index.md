@@ -45,7 +45,7 @@ among themselves $$H^{\nu\nu}$$. In the present implementation of $$\text{COSE}\
 $$
 \begin{align}
 H_\mathrm{v}(z, t) &= H^{\text{vac}} + H^{\nu\nu} \\
-&= H^{\text{vac}} + \mu\int_{-1}^{1}d\mathrm{v}'(1-\mathrm{v}\mathrm{v}')\left(\rho_\mathrm{v'}-\bar{\rho_\mathrm{v'}}^*\right) ~~~~~~ (3)
+&= H^{\text{vac}} + \mu\int_{-1}^{1}d\mathrm{v}'(1-\mathrm{v}\mathrm{v}')\left(\rho_\mathrm{v'}-\bar{\rho}_\mathrm{v'}}^*\right) ~~~~~~ (3)
 \end{align}
 $$
 
