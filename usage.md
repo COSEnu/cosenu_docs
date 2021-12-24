@@ -148,7 +148,7 @@ are the details default output files and their output layout.
     - _Output layout_ : 
 
     $$
-    \text{Time| ~~|~~ P_{\nu_e->\nu_e} ~~|~~ P_{\bar\nu_e->\bar\nu_e}
+    \text{Time} ~~|~~ P_{\nu_e->\nu_e} ~~|~~ P_{\bar\nu_e->\bar\nu_e}
     $$
 
 - **`ID_zsnap_t_<t>_v_<velocity mode>_.dat` :** Stores the snapshot data of the field variables for velocity mode = `vmode` at time = `t`.
@@ -158,8 +158,8 @@ are the details default output files and their output layout.
     z ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
     $$
 
-- **`ID_vsnap_t_<t>_z_<loc>_.dat` :** Stores the snapshot data of the field variables for the location =`loc` at time = `t`.
-    - _Output layot_ :
+- **`ID_vsnap_t_<t>_z_<loc>_.dat` :** Stores the snapshot data of the field variables for the location = `loc` at time = `t`.
+    - _Output layout_ :
 
     $$
     \mathrm{v} ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
@@ -169,7 +169,7 @@ are the details default output files and their output layout.
     - _Output layout_ :
 
     $$
-    v ~~|~~ z ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
+    \mathrm{v} ~~|~~ z ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
     $$
 
 - **`ID_dom_avrgd_surv_prob_<t>_.dat` :** Stores the domain averaged survival probabilitis of $$\nu_e$$ and $$\bar\nu_e$$ for all the velocity modes at time = `t`.
