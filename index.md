@@ -16,7 +16,7 @@ essentially non-oscillatory scheme for the flux reconstruction across the cell b
 
 # Theoretical setup
 
-$$\text{COSE}\nu$$ solves the following 1-D hyperbolic equation with a source term which describes the evolution of a two-flavor neutrino system.
+`Cose`$$\nu$$ solves the following 1-D hyperbolic equation with a source term which describes the evolution of a two-flavor neutrino system.
 
 $$
 \begin{equation}
@@ -38,7 +38,7 @@ $$
 
 The quantity $$H_\mathrm{v}(z, t)$$ on the right hand side of the equation (1) represents the Hamiltonian which dictates the dynamics of the flavor transitions. 
 In general, $$H_\mathrm{v}$$ contentains contributions from vacuum mixing $$H^{\text{vac}}$$, interaction with matter $$H^{\text{m}}$$ and the interactions 
-among themselves $$H^{\nu\nu}$$. In the present implementation of $$\text{COSE}\nu$$, the contribution from matter has been neglected. Thus, $$H_\mathrm{v}$$ takes the following form,
+among themselves $$H^{\nu\nu}$$. In the present implementation of `COSE`$$\nu$$, the contribution from matter has been neglected. Thus, $$H_\mathrm{v}$$ takes the following form,
 
 
 $$
