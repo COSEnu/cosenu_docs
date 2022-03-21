@@ -2,7 +2,7 @@
 
 # Usage
 
-Along with the main simulation engine, $$\text{COSE}\nu$$ we provide simple interface written in
+Along with the main simulation engine `COSE`$$\nu$$, we provide simple interface written in
 `python` to reduce the difficulties of setting up and running the simulation. The enitre
 process of the simulation can be thought of as consisting of following steps.
 
@@ -11,12 +11,12 @@ process of the simulation can be thought of as consisting of following steps.
 - Running the simulation.
 - Analysing the results.
 
-In the following we will explain the details of carrying out each of these steps.
+In the following we will explain the details of each step.
 
 ## Setting up the spatial grid
 
 Open `COSEnu/lib/configs.yaml` file. The domain spacific part typically
-look like shown below.
+looks like what's shown below.
 
 ```yml
 # Spatial domain specifics.
@@ -28,20 +28,20 @@ CFLS: [0.4]
 `zrange`: Start and end values for the domain required for the simulation. Both satrt and end values are necessary.
 
 `nzs` : Values of resolutions for which we want to run the simulations. In principle we can put any number of value
-inside the square bracket separated by comma. However the bracket should contain atleast one value.
+inside the square bracket separated by comma. However the bracket should contain at least one value.
 
 `CFLS` : Values of the `CFL` parameter for which we want to run the simulation. Any nmber of values with
-in the square brackets are allowed. The Bracket should not be empty. For numerical stability each of these values
+in the square brackets are allowed. The bracket should not be empty. For numerical stability each of these values
 should be chosen such that $$ 0< \text{CFL} \leq 1$$.
 
 ## Setting up the velocity bins
 
 In the current implementation we only consder the z-componant of velocity $$\text{cos}(\theta)$$
-which can take values from -1 to 1. To evolve each velocity modes numerically, we treat the beam of
-neutrinos whose velocity lies between $$\mathrm{v}$$ and $$\mathrm{v} + d\mathrm{v}$$ as asingle beam
+which can take values from -1 to 1. To evolve each velocity mode numerically, we treat the beam of
+neutrinos whose velocity lies between $$\mathrm{v}$$ and $$\mathrm{v} + d\mathrm{v}$$ as a single beam
 with velocity $$\mathrm{v} + d\mathrm{v}/2$$. The value of $$d\mathrm{v}$$can be estimated from the number of
 velocity bins $$\text{N}_{\mathrm{v}_z}$$. The starting and ending values of $$\mathrm{v}$$ and, the
-resolution of the phsase-space can be set as shown below.
+resolution of the phsase-space can be set as below.
 
 ```yml
 # Phase-space specifics.
@@ -102,7 +102,7 @@ advection_off: False # Options -> True, False
 
 ## Specifying the oscillation parameters
 
-To set up goth vacuum and collective neutino oscillation related parameters, we can use the configuration file as follows.
+To set up both vacuum and collective neutino oscillation related parameters, we can use the configuration file as follows.
 
 ```yml
 # Switch on/off vacuum oscillation
@@ -190,7 +190,7 @@ n_analyze: 100 # Total number of analysis to be carried out per job.
 # To capture the evolution of the field variables for all the velocities over entire domain.
 n_fullsnap: 3
 
-# To capture the evolution of the field variables for all th velocity modes at given locations.
+# To capture the evolution of the field variables for all the velocity modes at given locations.
 n_vsnap: 5 # snapshot of phase-space at vsnap_zlocs
 vsnap_z: [-300, 0, 300] # z-locations for phsse-space snapshots.
 
