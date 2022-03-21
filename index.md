@@ -9,15 +9,14 @@
 
 # About
 
-Collective Oscillation Simulation Engine for Neutrino-$$\text{COSE}\nu$$ is written completely in `C++` provide two advanced numerical schemes
-to simulate collective neutrino oscillation in the mean-field limit. The first method uses fourth order accurate central differencing supplimented by third 
-order Kreiss-Oliger error suppression scheme. The second one is implemented in using finite volume method along with the seventh order accurate weighted 
-essentially non-oscillatory scheme for the flux reconstruction across the cell boundaries. In both cases time evolution is carried out via fourth order 
-Runge-kutta method so that the spatial and temopral accuracies are of the same order.
+Collective Oscillation Simulation Engine for Neutrinos - $$\text{COSE}\nu$$ is written completely in `C++` and provides two advanced numerical schemes
+to simulate collective neutrino oscillations in the mean-field limit. The first method uses fourth order central finite differencing supplimented by third 
+order Kreiss-Oliger dissipation scheme. The second one is implemented with the finite volume method along with the seventh order weighted 
+essentially non-oscillatory scheme for the flux reconstruction across the cell boundaries. In both cases the time evolution is carried out via fourth order Runge-kutta method. 
 
 # Theoretical setup
 
-$$\text{COSE}\nu$$ solves the following 1-D hyperbolic equation with source term which describe the evolution of the two flavor neutrino system.
+$$\text{COSE}\nu$$ solves the following 1-D hyperbolic equation with a source term which describes the evolution of a two-flavor neutrino system.
 
 $$
 \begin{equation}
@@ -34,22 +33,22 @@ $$
 &\rho_{ee} ~~ \rho_{ex} \\
 &\rho_{ex}^* ~~ \rho_{xx}
 \end{align}
-\right) ~~~~~~ (2)
+\right). ~~~~~~ (2)
 $$
 
 The quantity $$H_\mathrm{v}(z, t)$$ on the right hand side of the equation (1) represents the Hamiltonian which dictates the dynamics of the flavor transitions. 
-In general $$H_\mathrm{v}$$ contentains contributions from vacuum oscillation $$H^{\text{vac}}$$, interaction with matter $$H^{\text{m}}$$ and the interactions 
-among themselves $$H^{\nu\nu}$$. In the present implementation of $$\text{COSE}\nu$$, contribution from matter has been neglected assuming that the matter is homogeniously distributed, which therefore do not affect the neutrino flavor transitions. Thus, $$H_\mathrm{v}$$ takes the form,
+In general, $$H_\mathrm{v}$$ contentains contributions from vacuum mixing $$H^{\text{vac}}$$, interaction with matter $$H^{\text{m}}$$ and the interactions 
+among themselves $$H^{\nu\nu}$$. In the present implementation of $$\text{COSE}\nu$$, the contribution from matter has been neglected. Thus, $$H_\mathrm{v}$$ takes the following form,
 
 
 $$
 \begin{align}
 H_\mathrm{v}(z, t) &= H^{\text{vac}} + H^{\nu\nu} \\
-&= H^{\text{vac}} + \mu\int_{-1}^{1}d\mathrm{v}'(1-\mathrm{v}\mathrm{v}')\left(\rho_\mathrm{v'}-\bar{\rho}_\mathrm{v'}^*\right) ~~~~~~ (3)
+&= H^{\text{vac}} + \mu\int_{-1}^{1}d\mathrm{v}'(1-\mathrm{v}\mathrm{v}')\left(\rho_\mathrm{v'}-\bar{\rho}_\mathrm{v'}^*\right), ~~~~~~ (3)
 \end{align}
 $$
 
-where, $$\bar\rho$$ is the density matrix for the anti-neutrino.
+where $$\bar\rho$$ is the density matrix for antineutrinos.
 
 
 [<previous]() &#124; [home](index.md) &#124; [next>](comp_setup.md)
