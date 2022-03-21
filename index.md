@@ -9,7 +9,7 @@
 
 # About
 
-Collective Oscillation Simulation Engine for Neutrinos -- $\textsc{Cose}$$$\nu$$ is written completely in `C++` and provides two advanced numerical schemes
+Collective Oscillation Simulation Engine for Neutrinos -- $\textsc{Cose}$$$$\nu$$ is written completely in `C++` and provides two advanced numerical schemes
 to simulate collective neutrino oscillations in the mean-field limit. The first method uses fourth order central finite differencing supplimented by third 
 order Kreiss-Oliger dissipation scheme. The second one is implemented with the finite volume method along with the seventh order weighted 
 essentially non-oscillatory scheme for the flux reconstruction across the cell boundaries. In both cases the time evolution is carried out via fourth order Runge-kutta method. 
