@@ -6,13 +6,13 @@ Along with the main simulation engine `COSE`$$\nu$$, we provide simple interface
 `python` to reduce the difficulties of setting up and running the simulation. The enitre
 process of the simulation can be thought of as consisting of following steps.
 
-- Setting up the spatial grid and phase-space bins.
+- Setting up.
 - Initializing the grid points.
 - Running the simulation.
 - Analysing the results.
 
 In the following we will explain the details of each step.
-
+# Setting up
 ## Setting up the spatial grid
 
 Open `COSEnu/lib/configs.yaml` file. The domain spacific part typically
@@ -56,7 +56,7 @@ nvzs: [50]
 
 `nvzs` : Number of angular bins we require for the simulation.
 
-### Specifying the output folders
+## Specifying the output folders
 
 The name of the folders to store the outputs from the simulation can be specified as follows.
 
@@ -75,7 +75,7 @@ folder_fd: "outputs-from-fd"
 Inside each of these folders, sub-folders will be created to store the output files from each configuration. 
 Each of these sub-folders will be named with their `ID`. By default, the `ID` takes the form `Nz_Nvz_CFL`.
 
-### Number of iterations
+## Number of iterations
 
 The number of iterations for which the simulation should be carried out can be specified as follows.
 ```yml
@@ -87,7 +87,7 @@ end_time: 100
 `end_time` : End time for the simulation in physical units. Given the physical end time the number of iterations 
 are estimated using $$\text{N_ITER} = $$ end_time$$/dt$$, where $$ dt = \text{CFL}\times dz$$.
 
-### Switching the advection
+## Switching the advection
 
 One can also switch on and off the advection throught the configuration file.
 
@@ -100,7 +100,7 @@ advection_off: False # Options -> True, False
 `advection_off`: Accepts Boolean values. Setting `advection_off` to `False` ensure the advection is switched on while setting it to 
 `True` will solve for the ordinary differential equation (ODE) in time (Eq. (1) without advection).
 
-### Specifying the oscillation parameters
+## Specifying the oscillation parameters
 
 To set up both vacuum and collective neutino oscillation related parameters, we can use the configuration file as follows.
 
@@ -132,7 +132,7 @@ By default, collective oscillation is turned on.
 `mu` : Indicates the streangth of $$\nu-\nu$$ interaction ($$\mu=\sqrt{2}G_Fn_{\nu_e}$$). By default, $$\mu$$ is set to 1.
 
 
-### Analysis
+## Analysis
 
 Along with the simulation, a few subroutines to check the deviation of conserved quantities and take snapshots are included. Following 
 are the details default output files and their output layout.
@@ -200,8 +200,9 @@ n_zsnap:  5 # snapshot of entire domain for the v_modes at zsnap_vmodes
 zsnap_v: [-1, -0.5, 0.5, 1] # v-modes for full spatial domain snapshots.
 ```
 Apart from these output files, `COSE`$$\nu$$ also store the initial state and the states of the simulation at regular intervals to binary files so that the simulation can be restarted from the last stored stat to take care of any unexpected stoppage. This is accomplished with the help of `NuOsc::write_state()/read_state()` inside the `COSEnu/lib/snaps.hpp` file.
- 
-## Initializing the density matrix
+
+
+# Initializing the density matrix
 The density matrix elements (aka field variables) can be initialized using the `NuOsc::initialize()` subroutine in the `COSEnu/lib/initialize.hpp` file.
 The code snippet that initializes the field varibles look as follows.
 ```c++
@@ -246,10 +247,12 @@ By default, the code is initialzed (both distributions and perturbations) accord
 
 `G0->G[]/G0->bG[]` : Stores the initial angular distribution of neutrino/anti-neutrino.
 
-`v_stat->ee, v_stat->xx, v_stat->ex_re, v_stat->ex_im` : Initial values $$\rho_{ee},~\rho_{xx},~\mathrm{Re}[\rho_{ex}]$$ and $$\mathrm{Im}[\rho_{ex}]$$ respectively.
+`v_stat->ee[], v_stat->xx[], v_stat->ex_re[], v_stat->ex_im[]` : Arrays to store the initial values of $$\rho_{ee},~\rho_{xx},~\mathrm{Re}[\rho_{ex}]$$ and $$\mathrm{Im}[\rho_{ex}]$$ respectively.
 
-`v_stat->bee, v_stat->bxx, v_stat->bex_re, v_stat->bex_im` : Initial values $$\bar\rho_{ee},~\bar\rho_{xx},~\mathrm{Re}[\bar\rho_{ex}]$$ and $$\mathrm{Im}[\bar\rho_{ex}]$$ respectively.
+`v_stat->bee[], v_stat->bxx[], v_stat->bex_re[], v_stat->bex_im[]` : Arrays to store the initial values of $$\bar\rho_{ee},~\bar\rho_{xx},~\mathrm{Re}[\bar\rho_{ex}]$$ and $$\mathrm{Im}[\bar\rho_{ex}]$$ respectively.
 
 Finally the initial angular profile is stored to a binary file named `ID_G0.bin`.
+
+# Running the simulation
 
 [<previous](comp_setup.md)  &#124;  [home](index.md)  &#124;  [next>]() 
