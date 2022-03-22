@@ -241,9 +241,15 @@ for (int i = 0; i < nvz; i++)
 
 By default, the code is initialzed (both distributions and perturbations) according to the convension in [this](https://doi.org/10.48550/arXiv.2108.09886) and [this]() articles.
 `g(...)` : Returns Gaussian angular destribution. Defined in `COSEnu/lib/miscellaneous_funcs.hpp`.
+
 `idx(i, j)` : Return the memory index for the (i, j) grid point.
+
 `G0->G[]/G0->bG[]` : Stores the initial angular distribution of neutrino/anti-neutrino.
+
 `v_stat->ee, v_stat->xx, v_stat->ex_re, v_stat->ex_im` : Initial values $$\rho_{ee},~\rho_{xx},~\mathrm{Re}[\rho_{ex}]$$ and $$\mathrm{Im}[\rho_{ex}]$$ respectively.
+
 `v_stat->bee, v_stat->bxx, v_stat->bex_re, v_stat->bex_im` : Initial values $$\bar\rho_{ee},~\bar\rho_{xx},~\mathrm{Re}[\bar\rho_{ex}]$$ and $$\mathrm{Im}[\bar\rho_{ex}]$$ respectively.
-Finally the initial angular profile is stored to a binary file named `ID_G0.bin`, to be used, if there is 
+
+Finally the initial angular profile is stored to a binary file named `ID_G0.bin`.
+
 [<previous](comp_setup.md)  &#124;  [home](index.md)  &#124;  [next>]() 
