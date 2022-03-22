@@ -16,7 +16,7 @@ Available options for `[mode]` are:
 
 Avilable options for `[scheme]` are: 
 
-`--fd` : Compile the code with finite differencing scheme(3rd order Kreiss-Oliger dissipation with $$\var\epsilon_\mathrm{KO}=0.1$$ is supported by default).
+`--fd` : Compile the code with finite differencing scheme(3rd order Kreiss-Oliger dissipation with $$ \var{\epsilon}_\mathrm{KO}=0.1 $$ is supported by default).
 
 `--fv` : Compiles the code with finite volume scheme(flux reconstruction is done using 7th order WENO by default).
 
