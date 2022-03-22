@@ -63,14 +63,14 @@ $$
 $$
 
 
-where $$\mathcal{F}$$ is the flux function associated with the cell averaged quantity $$\tilde\rho\_mathrm{v}$$.
+where $$\mathcal{F}$$ is the flux function associated with the cell averaged quantity $$\tilde\rho_{\mathrm{v}}$$.
 There are different approximations by which we can estimate the flux function. Here we adopt the
-seventh order accurate Weighted Essentially Non-Oscillatory (WENO7) scheme with 3 fourth order accurate
+seventh order accurate Weighted Essentially Non-Oscillatory (WENO7) scheme four fourth order accurate
 sub-stencils for the flux reconstruction at the cell boundaries. In this case the flux function can be
 written as,
 
 $$
-\mathcal F^7_{i+1/2} = \sum_{r=0}^2 w_r \mathcal{F}^4_{r, i+1/2}.
+\mathcal F^7_{i+1/2} = \sum_{r=0}^3 w_r \mathcal{F}^4_{r, i+1/2}.
 $$
 
 $$w_r$$ here is the weight factor for the fourth order accurate flux function constructed from the sub-stencil indexed using the shift parameter $$r$$.
