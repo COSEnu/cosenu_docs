@@ -2,7 +2,7 @@
 
 ## Creating the output folders and compiling
 
-Once we nesessary setups are spcified in the configuration file(`COSEnu/lig/config.yaml`) and specifying the initialization of the grid points, we need to compile the code and make the necessary foldes to store the output files. In order to reduce the effort to manually doing all these, `COSEnu` provide python script(`COSEnu/manage.py`), which read the configuration file, make the folders according to the specifucations on the configuration file and compile the code according to the options provided. Python 3.0+ is preffered to run the script (anaconda version can be installed from the terminal using `wget <url>`). The general form of using the script is as follows. 
+Once we nesessary setups are spcified in the configuration file(`COSEnu/lib/config.yaml`) and specifying the initialization of the grid points, we need to compile the code and make the necessary foldes to store the output files. In order to reduce the effort to manually doing all these, `COSEnu` provide python script(`COSEnu/manage.py`), which read the configuration file, make the folders according to the specifucations on the configuration file and compile the code according to the options provided. Python 3.0+ is preffered to run the script (anaconda version can be installed from the terminal using `wget <url>`). The general form of using the script is as follows. 
 
 `$python manage.py [opt] [mode] [scheme]`
 
@@ -31,5 +31,7 @@ Finally run the command
 `./main --id <ID> --config job.config`
 
 from the job folder to run the executable. The value specified for `<ID>` can be any acceptable string and will only be used for labelling the output files.  
+
+
 
 [<previous](usage.md)  &#124;  [home](index.md)  &#124;  [next>](example.md) 
