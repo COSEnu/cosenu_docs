@@ -7,6 +7,8 @@
 3. [Numerical schemes](comp_setup.md)
 4. [Setting-up a simulation](usage.md)
 5. [Running a simulation](run.md)
+6. [Example](example.md)
+7. [Contributors](contributors.md)
 
 # About
 
