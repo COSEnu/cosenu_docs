@@ -12,7 +12,7 @@ process of the simulation can be thought of as consisting of following steps.
 - Analysing the results.
 
 In the following we will explain the details of each step.
-# Setting up
+# Setting up a simulation
 ## Setting up the spatial grid
 
 Open `COSEnu/lib/configs.yaml` file. The domain spacific part typically
