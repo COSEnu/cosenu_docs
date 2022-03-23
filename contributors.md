@@ -21,4 +21,6 @@
     - _GSI Helmholtzzentrum für Schwerionenforschung, Planckstraße 1, 64291 Darmstadt Germany._
 
 ---                                                                                     
-   Kindly direct queries to cosenuproject@gmail.com                                       
+   Kindly direct queries to cosenuproject@gmail.com    
+
+   [<previous](example.md) &#124; [home](index.md) &#124; [next>]()                                   
