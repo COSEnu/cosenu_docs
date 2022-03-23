@@ -15,12 +15,12 @@
     - _Institute of Physics, Academia Sinica, Taipei, 11529, Taiwan._
 
 4. **Yi-Siou Wu**                                        
-        - _Institute of Physics, Academia Sinica, Taipei, 11529, Taiwan._
+    - _Institute of Physics, Academia Sinica, Taipei, 11529, Taiwan._
                                                                                     
 5. **Zewei Xiong**
     - _GSI Helmholtzzentrum für Schwerionenforschung, Planckstraße 1, 64291 Darmstadt Germany._
 
 ---                                                                                     
-   Kindly direct queries to cosenuproject@gmail.com    
+   Kindly direct queries to **_cosenuproject@gmail.com_**    
 
    [<previous](example.md) &#124; [home](index.md) &#124; [next>]()                                   
