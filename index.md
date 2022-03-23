@@ -3,9 +3,10 @@
 # Contents
 
 1. [About](index.md)
-2. [Theoretical setup](index.md)
-3. [Numerical setup](comp_setup.md)
-4. [Usage](usage.md)
+2. [Theoretical framework](index.md)
+3. [Numerical schemes](comp_setup.md)
+4. [Setting-up a simulation](usage.md)
+5. [Running a simulation](run.md)
 
 # About
 
