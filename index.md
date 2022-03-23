@@ -15,7 +15,7 @@ to simulate collective neutrino oscillations in the mean-field limit. The first 
 order Kreiss-Oliger dissipation scheme. The second one is implemented with the finite volume method along with the seventh order weighted 
 essentially non-oscillatory scheme for the flux reconstruction across the cell boundaries. In both cases the time evolution is carried out via fourth order Runge-kutta method. 
 
-# Theoretical setup
+# Theoretical framework
 
 `COSE`$$\nu$$ solves the following 1-D hyperbolic equation with a source term which describes the evolution of a two-flavor neutrino system.
 
