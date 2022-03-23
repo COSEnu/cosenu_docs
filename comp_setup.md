@@ -1,6 +1,6 @@
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-# Numerical setup
+# Numerical schemes
 
 In order to solve the equation (1) numerically, we devide the spatial domain spanning from $$z_0$$ to $$z_1$$ into
 $$N_z$$ discretized cells such that the size of each cell $$dz = (z_1 - z_0)/N_z$$. We also devide
