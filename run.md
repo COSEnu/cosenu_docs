@@ -8,11 +8,11 @@ Once the nesessary setups and the initialization of the grid points are spcified
 
 Available options for `[opt]` are:
 
--`--score` : Compiles the code for single core usage.
+`--score` : Compiles the code for single core usage.
 
--`--mcore` : Compiles the code for multi-core usage.
+`--mcore` : Compiles the code for multi-core usage.
 
--`--acc` : Compiles the code with `pgc++` to be used on GPU.
+`--acc` : Compiles the code with `pgc++` to be used on GPU.
 
 Available options for `mode` are:
 
@@ -20,9 +20,9 @@ Available options for `mode` are:
 
 Avilable options for `[scheme]` are: 
 
-`--fd` : Compiles the code with finite difference scheme(3rd order Kreiss-Oliger dissipation with $$ \var{\epsilon}_\mathrm{KO}=0.1 $$ is supported by default).
+`fd` : Compiles the code with finite difference scheme(3rd order Kreiss-Oliger dissipation with $$ \var{\epsilon}_\mathrm{KO}=0.1 $$ is supported by default).
 
-`--fv` : Compiles the code with finite volume scheme.
+`fv` : Compiles the code with finite volume scheme.
 
 The sript will automatically copy the executable (named `main` by default) and configuration file(named `job.config` by default) to the corresponding folders (created automatically according to the specifications given in the `config.yaml` file). 
 
