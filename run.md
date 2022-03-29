@@ -4,7 +4,7 @@
 
 Once the nesessary setups and the initialization of the grid points are spcified in the configuration file (`COSEnu/lig/config.yaml`), we need to compile the code and make the necessary foldes to store the output files. In order to reduce the effort to manually doing all these, `COSEnu` provides a python script(`COSEnu/manage.py`), which reads the configuration file, makes the folders according to the specifucations on the configuration file and compiles the code according to the options provided. Python 3.0+ is preffered to run the script (anaconda version can be installed from the terminal using `wget <url>`). The general form of using the script is as follows. 
 
-`$python manage.py [opt] [mode] [scheme]`
+`$python manage.py [opt] [scheme]`
 
 Available options for `[opt]` are:
 
@@ -14,9 +14,6 @@ Available options for `[opt]` are:
 
 `--acc` : Compiles the code with `pgc++` to be used on GPU.
 
-Available options for `mode` are:
-
-`--ff` : Initialize the density matix componets and the angular distributions from previously stored binary file. This option is necessary only if we need to resume the simulation which has been stopped before finishing. Otherwise this option can be left unspecified.
 
 Avilable options for `[scheme]` are: 
 
@@ -28,7 +25,11 @@ The sript will automatically copy the executable (named `main` by default) and c
 
 Finally run the command
 
-`./main --id <ID> --config job.config`
+`./main [mode] --id <ID> --config job.config`
+
+Available options for `mode` are:
+
+`--ff` : Initialize the density matix componets and the angular distributions from previously stored binary file. This option is necessary only if we need to resume the simulation which has been stopped before finishing. Otherwise this option can be left unspecified.
 
 from the job folder to run the executable. The value specified for `<ID>` can be any acceptable string and will only be used for labeling the output files.  
 
