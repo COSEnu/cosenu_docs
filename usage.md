@@ -240,7 +240,7 @@ for (int i = 0; i < nvz; i++)
 }
 ```
 
-By default, the simulation is initialzed (angular and spatial distributions, and perturbations) according to the convension in [this](https://doi.org/10.1103/PhysRevD.104.103003) and [this]() articles.
+By default, the simulation is initialzed (angular and spatial distributions, and perturbations) according to the convension in [this](https://doi.org/10.1103/PhysRevD.104.103003) and [this](https://arxiv.org/abs/2203.12866) articles.
 
 `g(...)` : Returns Gaussian angular destribution. Defined in `COSEnu/lib/miscellaneous_funcs.hpp`.
 
