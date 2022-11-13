@@ -1,7 +1,7 @@
 # List of contributors
 ---                 
 
-![./static/Cosenu_contributers.png]()
+![image](./static/Cosenu_contributers.png)
 
 ---                                                                                     
    Kindly direct queries to **_cosenuproject@gmail.com_**    
