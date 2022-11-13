@@ -22,4 +22,4 @@
 ---                                                                                     
    Kindly direct queries to **_cosenuproject@gmail.com_**    
 
-   [<previous](example.md) &#124; [home](index.md) &#124;[next>(publication_list.md)
+   [<previous](example.md) &#124; [home](index.md) &#124; [next>](publication_list.md)
