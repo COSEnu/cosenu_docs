@@ -1,5 +1,4 @@
-# List of contributors
----                 
+# List of contributors              
 
 1.**Chun-Yu Lin**
     - _National Center for High-performance computing, National Applied Research Laboratories, Hsinchu Science Park, Hsinchu City 30076,  Taiwan_.

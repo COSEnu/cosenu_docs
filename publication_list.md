@@ -1,5 +1,4 @@
 # List of publications
----
 
 1. Collective fast neutrino flavor conversions in a 1D box: Initial conditions and     long-term evolution [Phys. Rev. D 104, 103003](https://doi.org/10.1103/PhysRevD.104.103003)
 
