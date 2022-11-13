@@ -9,6 +9,7 @@
 5. [Running a simulation](run.md)
 6. [Example](example.md)
 7. [Contributors](contributors.md)
+8. [Publication list](publication_list.md)
 
 # About
 

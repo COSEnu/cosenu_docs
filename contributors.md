@@ -1,7 +1,7 @@
 # List of contributors
 ---                 
 
-1. **Chun-Yu Lin**                                                                           
+1.**Chun-Yu Lin**
     - _National Center for High-performance computing, National Applied Research Laboratories, Hsinchu Science Park, Hsinchu City 30076,  Taiwan_.
 
 2. **Meng-Ru Wu**
@@ -23,4 +23,4 @@
 ---                                                                                     
    Kindly direct queries to **_cosenuproject@gmail.com_**    
 
-   [<previous](example.md) &#124; [home>](index.md)                             
+   [<previous](example.md) &#124; [publication list>](publication_list.md)                             
