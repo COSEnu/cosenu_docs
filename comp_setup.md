@@ -13,9 +13,7 @@ With the above discretization, the initial value problem in the equation (1) can
 $$
 \frac{d\rho_{\mathrm{v},i}}{dt} = L^{\text{vac}}_i[\rho_\mathrm{v}] + L^{\nu\nu}_i[\rho_\mathrm{v}] + L^{adv}_i[\rho_\mathrm{v}]
 $$
-     
 
-     
 where, $$L_i^\text{vac}, L_i^{\nu\nu}$$ and $$L_i^\text{adv}$$ are operators that computes the contribution from vacuum 
 mixing, neutrino-neutrino interaction and the spatial derivative respectively at the $$i^\text{th}$$ cell, $$0\leq i < N_z$$. 
 Given the values of the field variables at $$t=0 $$ of each velocity mode at all grid points, the successive state of the 
@@ -70,7 +68,7 @@ sub-stencils for the flux reconstruction at the cell boundaries. In this case th
 written as,
 
 $$
-\mathcal F^7_{i+1/2} = \sum_{r=0}^3 w_r \mathcal{F}^4_{r, i+1/2}.
+\mathcal{F}^7_{i+1/2} = \sum_{r=0}^3 w_r \mathcal{F}^4_{r, i+1/2}.
 $$
 
 $$w_r$$ here is the weight factor for the fourth order accurate flux function constructed from the sub-stencil indexed using the shift parameter $$r$$.
