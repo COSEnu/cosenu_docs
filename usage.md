@@ -137,6 +137,7 @@ By default, collective oscillation is turned on.
 Along with the simulation, a few subroutines to check the deviation of conserved quantities and take snapshots are included. Following 
 are the details default output files and their output layout.
 
+
 - **`<ID>_conserved_quantities.dat` :** Stores the details of the deviations of the conserved quantities.
     - _Output layout_ : 
     $$
@@ -153,6 +154,7 @@ are the details default output files and their output layout.
     $$
      z ~~|~~ \mathrm{v} ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
     $$
+    
 ```yml
 # ANALYSIS
 #----------------------------------------------------------------#

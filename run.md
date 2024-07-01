@@ -17,7 +17,7 @@ Available options for `[opt]` are:
 
 Avilable options for `[scheme]` are: 
 
-`fd` : Compiles the code with finite difference scheme(3rd order Kreiss-Oliger dissipation with $$ \var{\epsilon}_\mathrm{KO}=0.1 $$ is supported by default).
+`fd` : Compiles the code with finite difference scheme(3rd order Kreiss-Oliger dissipation with $$\epsilon_{\rm{KO}}=0.1$$ is supported by default).
 
 `fv` : Compiles the code with finite volume scheme.
 
