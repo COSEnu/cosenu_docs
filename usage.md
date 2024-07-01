@@ -15,7 +15,7 @@ In the following we will explain the details of each step.
 # Setting up a simulation
 ## Setting up the spatial grid
 
-Open `COSEnu/lib/configs.yaml` file. The domain spacific part typically
+Open `COSEnu/configs.yaml` file. The domain spacific part typically
 looks like what's shown below.
 
 ```yml
@@ -85,7 +85,7 @@ end_time: 100
 ```
 
 `end_time` : End time for the simulation in physical units. Given the physical end time the number of iterations 
-are estimated using $$\text{N_ITER} = $$ end_time$$/dt$$, where $$ dt = \text{CFL}\times dz$$.
+are estimated using $$ \rm{N\_ITER} = \rm{end\_time}/dt$$, where $$ dt = \text{CFL}\times dz$$.
 
 ## Switching the advection
 
@@ -139,47 +139,20 @@ are the details default output files and their output layout.
 
 - **`<ID>_conserved_quantities.dat` :** Stores the details of the deviations of the conserved quantities.
     - _Output layout_ : 
-
     $$
     \text{Time} ~~|~~ \delta P_\text{max} ~~|~~ \langle\delta P\rangle ~~|~~ \langle\delta\bar{P}\rangle ~~|~~ |M_0| 
     $$        
-
 - **`<ID>_survival_probability.dat` :** Stores the survival probabilities of $$\nu$$ and $$\bar\nu$$
     - _Output layout_ : 
-
     $$
     \text{Time} ~~|~~ P_{\nu_e->\nu_e} ~~|~~ P_{\bar\nu_e->\bar\nu_e}
     $$
-
-- **`<ID>_zsnap_t_<t>_v_<vmode>_.dat` :** Stores the snapshot data of the field variables for velocity mode = `vmode` at time = `t`.
-    - _Output layout_ : 
-
-    $$
-    z ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
-    $$
-
-- **`<ID>_vsnap_t_<t>_z_<loc>_.dat` :** Stores the snapshot data of the field variables for the location = `loc` at time = `t`.
+- **`<ID>_rho_t.dat` :** Stores full snap shot data of the field variables.
     - _Output layout_ :
 
     $$
-    \mathrm{v} ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
+     z ~~|~~ \mathrm{v} ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
     $$
-
-- **`<ID>_state_snap.dat` :** Stores full snap shot data of the field variables.
-    - _Output layout_ :
-
-    $$
-    \mathrm{v} ~~|~~ z ~~|~~ \rho_{ee} ~~|~~ \rho_{xx} ~~|~~ \text{Re}[\rho_\text{ex}] ~~|~~ \text{Im}[\rho_\text{ex}] ~~|~~ \bar\rho_{ee} ~~|~~ \bar\rho_{xx} ~~|~~ \text{Re}[\bar\rho_\text{ex}] ~~|~~ \text{Im}[\bar\rho_\text{ex}]
-    $$
-
-- **`<ID>_dom_avrgd_surv_prob_<t>_.dat` :** Stores the domain averaged survival probabilitis of $$\nu_e$$ and $$\bar\nu_e$$ for all the velocity modes at time = `t`.
-    - _Output layout_ :
-
-    $$
-    \mathrm{v} ~~|~~  \langle P_{\nu_e->\nu_e}\rangle ~~|~~ \langle P_{\bar\nu_e->\bar\nu_e}\rangle
-    $$
-
-
 ```yml
 # ANALYSIS
 #----------------------------------------------------------------#
@@ -188,22 +161,13 @@ are the details default output files and their output layout.
 n_analyze: 100 # Total number of analysis to be carried out per job.
 
 # To capture the evolution of the field variables for all the velocities over entire domain.
-n_fullsnap: 3
-
-# To capture the evolution of the field variables for all the velocity modes at given locations.
-n_vsnap: 5 # snapshot of phase-space at vsnap_zlocs
-vsnap_z: [-300, 0, 300] # z-locations for phsse-space snapshots.
-
-# To capture the evolution of the field variables for given modes over the entire domain.
-n_zsnap:  5 # snapshot of entire domain for the v_modes at zsnap_vmodes
-            # between time = 0 and time = end_time
-zsnap_v: [-1, -0.5, 0.5, 1] # v-modes for full spatial domain snapshots.
+n_dump_rho: 100
 ```
-Apart from these output files, `COSE`$$\nu$$ also store the initial state and the states of the simulation at regular intervals to binary files so that the simulation can be restarted from the last stored stat to take care of any unexpected stoppage. This is accomplished with the help of `NuOsc::write_state()/read_state()` inside the `COSEnu/lib/snaps.hpp` file.
+Apart from these output files, `COSE`$$\nu$$ also store the initial state and the states of the simulation at regular intervals to binary files so that the simulation can be restarted from the last stored stat to take care of any unexpected stoppage. This is accomplished with the help of `NuOsc::write_state()/read_state()` inside the `COSEnu/src/snaps.hpp` file.
 
 
 # Initializing the density matrix
-The density matrix elements (aka field variables) can be initialized using the `NuOsc::initialize()` subroutine in the `COSEnu/lib/initialize.hpp` file.
+The density matrix elements (aka field variables) can be initialized using the `NuOsc::initialize()` subroutine in the `COSEnu/src/initialize.hpp` file.
 The code snippet that initializes the field varibles look as follows.
 ```c++
 double signu  = 0.6;
@@ -242,7 +206,7 @@ for (int i = 0; i < nvz; i++)
 
 By default, the simulation is initialzed (angular and spatial distributions, and perturbations) according to the convension in [this](https://doi.org/10.1103/PhysRevD.104.103003) and [this](https://arxiv.org/abs/2203.12866) articles.
 
-`g(...)` : Returns Gaussian angular destribution. Defined in `COSEnu/lib/miscellaneous_funcs.hpp`.
+`g(...)` : Returns Gaussian angular destribution. Defined in `COSEnu/src/miscellaneous_funcs.hpp`.
 
 `idx(i, j)` : Return the memory index for the (i, j) grid point.
 

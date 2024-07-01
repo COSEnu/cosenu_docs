@@ -10,7 +10,7 @@ CFL = 0.2 and 0.4
 
 We would also like to run the simulation from $$t = 0$$ to $$t = 1200$$ .
 
-The `COSEnu/lib/config.yaml` file with vacuum oscillations turned off look like as shown below
+The `COSEnu/config.yaml` file with vacuum oscillations turned off look like as shown below
 
 ```yaml
 
@@ -97,8 +97,8 @@ We can now run the command `python manage.py --mcore fd` and `python manage.py -
 [ OK ]...Created /COSEnu/output-from-fv/20000_64_0.4
 [ OK ]...Created /COSEnu/output-from-fv/20000_128_0.2
 [ OK ]...Created /COSEnu/output-from-fv/20000_128_0.4
-/COSEnu/lib/main.o removed.
-/COSEnu/lib/main removed.
+/COSEnu/src/main.o removed.
+/COSEnu/src/main removed.
 g++ -O3 -std=c++0x -fopenmp  main.cpp -c -o main.o
 g++ -O3 -std=c++0x -fopenmp main.o -o main 
 main generated for multicore job
@@ -121,8 +121,8 @@ main generated for multicore job
 [ OK ]...Created /COSEnu/output-from-fd/20000_64_0.4
 [ OK ]...Created /COSEnu/output-from-fd/20000_128_0.2
 [ OK ]...Created /COSEnu/output-from-fd/20000_128_0.4
-/COSEnu/lib/main.o removed.
-/COSEnu/lib/main removed.
+/COSEnu/src/main.o removed.
+/COSEnu/src/main removed.
 g++ -O3 -std=c++0x -fopenmp  main.cpp -c -o main.o
 g++ -O3 -std=c++0x -fopenmp main.o -o main 
 main generated for multicore job
