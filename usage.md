@@ -148,7 +148,8 @@ are the details default output files and their output layout.
     $$
     \text{Time} ~~|~~ P_{\nu_e->\nu_e} ~~|~~ P_{\bar\nu_e->\bar\nu_e}
     $$
-- **`rho_t.dat` :** Stores full snap shot data of the field variables.
+- **`rho_t.dat` :** Stores full snap shot data of the field variables. The `t` in the file name indicate the iteration number here. Multiplying iteration number with $$dt$$ should give us the physical time. i.e., physical_time $$=t\times dt$$ 
+
     - _Output layout_ :
 
     $$
