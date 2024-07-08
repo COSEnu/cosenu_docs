@@ -25,14 +25,12 @@ The sript will automatically copy the executable (named `main` by default) and c
 
 Finally run the command
 
-`./main [mode] --id <ID> --config job.config`
+`./main [mode] --config job.config`
 
 Available options for `mode` are:
 
 `--ff` : Initialize the density matix componets and the angular distributions from previously stored binary file. This option is necessary only if we need to resume the simulation which has been stopped before finishing. Otherwise this option can be left unspecified.
 
-from the job folder to run the executable. The value specified for `<ID>` can be any acceptable string and will only be used for labeling the output files.  
-
-
+from the job folder to run the executable. 
 
 [<previous](usage.md)  &#124;  [home](index.md)  &#124;  [next>](example.md) 
