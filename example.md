@@ -156,9 +156,7 @@ zsnap_v     : [-1, -0.5, 0.5, 1]
 
 Now to run the job,  example  with the ID 5000_64_0.2, we can `cd` to the job directory `5000_64_0.2` and execute the command
 
-`./main --id 5000_64_0.2 --conf job.config`
-
-As mentioned earlier, for `<ID>` (after `--id`) any valid string (even an empy string) should suffice, as it is used only to tag the output files. 
+`./main --conf job.config`
 
 
 [<previous](run.md) &#124; [home](index.md) &#124; [next>](contributors.md)
