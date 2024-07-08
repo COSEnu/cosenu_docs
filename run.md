@@ -33,4 +33,10 @@ Available options for `mode` are:
 
 from the job folder to run the executable. 
 
+To allow `manage.py` submit automatically, run
+
+`$python manage.py [opt] [scheme] --s [submit_opt]`
+
+Run `$python manage.py --help` to get detailed instruction abut executing the simulation. Make sure that required compilers are installed on the system. 
+
 [<previous](usage.md)  &#124;  [home](index.md)  &#124;  [next>](example.md) 
