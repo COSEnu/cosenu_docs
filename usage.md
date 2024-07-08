@@ -15,7 +15,7 @@ In the following we will explain the details of each step.
 # Setting up a simulation
 ## Setting up the spatial grid
 
-Open `COSEnu/configs.yaml` file. The domain spacific part typically
+Open `COSEnu/cosenu_configs.yaml` file. The domain spacific part typically
 looks like what's shown below.
 
 ```yml
