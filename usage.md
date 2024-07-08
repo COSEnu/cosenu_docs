@@ -138,17 +138,17 @@ Along with the simulation, a few subroutines to check the deviation of conserved
 are the details default output files and their output layout.
 
 
-- **`<ID>_conserved_quantities.dat` :** Stores the details of the deviations of the conserved quantities.
+- **`conserved_quantities.dat` :** Stores the details of the deviations of the conserved quantities.
     - _Output layout_ : 
     $$
     \text{Time} ~~|~~ \delta P_\text{max} ~~|~~ \langle\delta P\rangle ~~|~~ \langle\delta\bar{P}\rangle ~~|~~ |M_0| 
     $$        
-- **`<ID>_survival_probability.dat` :** Stores the survival probabilities of $$\nu$$ and $$\bar\nu$$
+- **`survival_probability.dat` :** Stores the survival probabilities of $$\nu$$ and $$\bar\nu$$
     - _Output layout_ : 
     $$
     \text{Time} ~~|~~ P_{\nu_e->\nu_e} ~~|~~ P_{\bar\nu_e->\bar\nu_e}
     $$
-- **`<ID>_rho_t.dat` :** Stores full snap shot data of the field variables.
+- **`rho_t.dat` :** Stores full snap shot data of the field variables.
     - _Output layout_ :
 
     $$
@@ -218,7 +218,7 @@ By default, the simulation is initialzed (angular and spatial distributions, and
 
 `v_stat->bee[], v_stat->bxx[], v_stat->bex_re[], v_stat->bex_im[]` : Arrays to store the initial values of $$\bar\rho_{ee},~\bar\rho_{xx},~\mathrm{Re}[\bar\rho_{ex}]$$ and $$\mathrm{Im}[\bar\rho_{ex}]$$ respectively.
 
-Finally the initial angular profile is stored to a binary file named `<ID>_G0.bin`.
+Finally the initial angular profile is stored to a binary file named `G0.bin`.
 
 
 [<previous](comp_setup.md)  &#124;  [home](index.md)  &#124;  [next>](run.md) 
