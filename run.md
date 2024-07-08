@@ -2,7 +2,7 @@
 
 ## Creating the output folders and compiling
 
-Once the nesessary setups and the initialization of the grid points are spcified in the configuration file (`COSEnu/lig/config.yaml`), we need to compile the code and make the necessary foldes to store the output files. In order to reduce the effort to manually doing all these, `COSEnu` provides a python script(`COSEnu/manage.py`), which reads the configuration file, makes the folders according to the specifucations on the configuration file and compiles the code according to the options provided. Python 3.0+ is preffered to run the script (anaconda version can be installed from the terminal using `wget <url>`). The general form of using the script is as follows. 
+Once the nesessary setups and the initialization of the grid points are spcified in the configuration file (`COSEnu/cosenu_configs.yaml`), we need to compile the code and make the necessary foldes to store the output files. In order to reduce the effort to manually doing all these, `COSEnu` provides a python script(`COSEnu/manage.py`), which reads the configuration file, makes the folders according to the specifucations on the configuration file and compiles the code according to the options provided. Python 3.0+ is preffered to run the script (anaconda version can be installed from the terminal using `wget <url>`). The general form of using the script is as follows. 
 
 `$python manage.py [opt] [scheme]`
 
@@ -21,7 +21,7 @@ Avilable options for `[scheme]` are:
 
 `fv` : Compiles the code with finite volume scheme.
 
-The sript will automatically copy the executable (named `main` by default) and configuration file(named `job.config` by default) to the corresponding folders (created automatically according to the specifications given in the `config.yaml` file). 
+The sript will automatically copy the executable (named `main` by default) and configuration file(named `job.config` by default) to the corresponding folders (created automatically according to the specifications given in the `cosenu_configs.yaml` file). 
 
 Finally run the command
 

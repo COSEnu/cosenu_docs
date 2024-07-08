@@ -10,7 +10,7 @@ CFL = 0.2 and 0.4
 
 We would also like to run the simulation from $$t = 0$$ to $$t = 1200$$ .
 
-The `COSEnu/config.yaml` file with vacuum oscillations turned off look like as shown below
+The `COSEnu/cosenu_configs.yaml` file with vacuum oscillations turned off look like as shown below
 
 ```yaml
 
